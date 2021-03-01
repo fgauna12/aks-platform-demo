@@ -9,9 +9,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  clusterName: 'cluster-name'
-
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
