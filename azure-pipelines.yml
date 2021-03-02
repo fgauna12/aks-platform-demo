@@ -25,4 +25,7 @@ steps:
   env:
     RANCHER_TOKEN: $(RancherToken)
 
+- bash: rancher clusters import $(clusterName)
+  displayName: Rancher import
+
 
