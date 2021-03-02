@@ -13,3 +13,16 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: './create-appg-aks.sh'
     arguments: '$(clusterName)'
+- bash: |
+    wget https://github.com/rancher/cli/releases/download/v2.4.10/rancher-linux-amd64-v2.4.10.tar.gz
+    tar -zxvf rancher-linux-amd64-v2.4.10.tar.gz
+
+    sudo chmod +x ./rancher-v2.4.10/rancher && sudo mv ./rancher-v2.4.10/rancher /usr/local/bin
+  displayName: Install Rancher CLI
+
+- bash: rancher login https://nonprod.rancher.azure.boxboat.io --token $RANCHER_TOKEN
+  displayName: Rancher Login
+  env:
+    RANCHER_TOKEN: $(RancherToken)
+
+
