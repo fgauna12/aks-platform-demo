@@ -25,7 +25,7 @@ steps:
   env:
     RANCHER_TOKEN: $(RancherToken)
 
-- bash: rancher clusters import $(clusterName)
+- bash: rancher clusters import azaks-$(clusterName)-sbx
   displayName: Rancher import
 
 
