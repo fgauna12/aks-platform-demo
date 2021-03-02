@@ -4,6 +4,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: ./create-appg-aks.sh $(clusterName)
+steps: 
+- task: AzureCLI@2
   displayName: 'Creating AKS cluster with App Gateway'
+  inputs:
+    azureSubscription: 'Microsoft Azure Sponsorship(d09f4363-eae7-4c79-864e-08154540c083)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './create-appg-aks.sh '
+    arguments: '"$(clusterName)"'
