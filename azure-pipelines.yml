@@ -25,7 +25,12 @@ steps:
   env:
     RANCHER_TOKEN: $(RancherToken)
 
-- bash: rancher clusters import azaks-$(clusterName)-sbx
+- bash: |
+    AKS_CLUSTER_NAME="azaks-$(clusterName)-sbx"
+    rancher clusters create $AKS_CLUSTER_NAME --import
+    APPLY_CMD=$(rancher clusters import $AKS_CLUSTER_NAME -q | head -1)
+
+    eval $APPLY_CMD
   displayName: Rancher import
 
 
