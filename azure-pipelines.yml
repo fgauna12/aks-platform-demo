@@ -11,5 +11,5 @@ steps:
     azureSubscription: 'Microsoft Azure Sponsorship(d09f4363-eae7-4c79-864e-08154540c083)'
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
-    scriptPath: './create-appg-aks.sh '
-    arguments: '"$(clusterName)"'
+    scriptPath: './create-appg-aks.sh'
+    arguments: '$(clusterName)'
