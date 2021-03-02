@@ -5,6 +5,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps: 
+- bash: |
+    RANDOM_NAME=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '')
+    echo "##vso[task.setvariable variable=clusterName;]clusterName"
+  displayName: Generating random cluster name
 - task: AzureCLI@2
   displayName: 'Creating AKS cluster with App Gateway'
   inputs:
