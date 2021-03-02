@@ -8,6 +8,8 @@ if [ -z "$1" ]
     exit 1
 fi
 
+echo "Creating cluster with base name $1"
+
 CLUSTER_NAME="azaks-$1-sbx"
 RESOURCE_GROUP_NAME="rg-$CLUSTER_NAME-sbx"
 VNET_NAME="vnet-$CLUSTER_NAME-sbx"
