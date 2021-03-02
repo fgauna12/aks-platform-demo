@@ -5,5 +5,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: ./create-appg-aks.sh
+- script: ./create-appg-aks.sh $(clusterName)
   displayName: 'Creating AKS cluster with App Gateway'
