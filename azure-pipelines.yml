@@ -6,7 +6,7 @@ pool:
 
 steps: 
 - bash: |
-    RANDOM_NAME=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '')
+    RANDOM_NAME=$(tr -dc a-z0-9 </dev/urandom | head -c 13 ; echo '')
     echo "##vso[task.setvariable variable=clusterName;]$RANDOM_NAME"
   displayName: Generating random cluster name
 - task: AzureCLI@2
